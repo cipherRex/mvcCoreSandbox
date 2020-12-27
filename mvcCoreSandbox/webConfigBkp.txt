@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <handlers>
+        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+      </handlers>
+      <aspNetCore processPath="dotnet" arguments=".\mvcCoreSandbox.dll" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" hostingModel="OutOfProcess" />
+    
+		
+    <modules>
+      <remove name="UmbracoModule" />
+      <remove name="ClientDependencyModule" />
+      <remove name="ImageProcessorModule" />
+    </modules>
+
+</system.webServer>
+
+					  <system.web>
+
+
+    <compilation debug="true" targetFramework="4.0">
+      <assemblies>
+        <remove assembly="Umbraco.ModelsBuilder"/>
+      </assemblies>
+    </compilation>
+		
+    <roleManager enabled="false">
+      <providers>
+        <clear />
+      </providers>
+    </roleManager>
+		
+		
+		</system.web>
+
+
+  </location>
+</configuration>
+<!--ProjectGuid: 44c544e2-a52d-4345-aba6-d3d556a4724e-->
